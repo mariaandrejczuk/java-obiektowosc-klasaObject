@@ -51,12 +51,15 @@ public class RealEstateApp {
                     String city = scanner.nextLine();
 
                     Address address = new Address(street, houseNumber, flatNumber, postcode, city);
-                    RealEstate realEstate = new RealEstate(number, bound, address, landRegisterNumber, description)
+                    RealEstate realEstate = new RealEstate(number, bound, address, landRegisterNumber, description);
 
                     repo.add(realEstate);
                     break;
+
                 case 2:
+                    repo.displayAll();
                     break;
+
                 case 3:
                     break;
             }

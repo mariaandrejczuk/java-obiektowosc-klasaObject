@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class RealEstate {
 
@@ -13,5 +14,33 @@ public class RealEstate {
         this.address = address;
         this.landRegisterNumber = landRegisterNumber;
         this.description = description;
+    }
+
+    @Override
+    //ta adnotacja mówi, że to jest metoda przysłaniana (własciwie nie ma innej opcji, więc adnotacja nie jest konieczna, ma tylko charakter informacyjny)
+    public String toString() {  // przeciążona metoda toString dla RealEstate
+        return "RealEstate{" +
+                "number=" + number +
+                ", bound='" + bound + '\'' +
+                ", address=" + address +   //adres jest obiektem, więc w Address.java też wywołamy metodę toString
+                ", landRegisterNumber='" + landRegisterNumber + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RealEstate that = (RealEstate) o;
+        return number == that.number &&
+                Objects.equals(bound, that.bound) &&
+                Objects.equals(address, that.address) &&
+                Objects.equals(landRegisterNumber, that.landRegisterNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, bound, address, landRegisterNumber);
     }
 }
