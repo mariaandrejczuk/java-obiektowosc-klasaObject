@@ -5,6 +5,8 @@ public class RealEstateApp {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in, "UTF-8");
+        RealEstateRepo repo = new RealEstateRepo();
+
         int option;
 
         do {
@@ -51,7 +53,7 @@ public class RealEstateApp {
                     Address address = new Address(street, houseNumber, flatNumber, postcode, city);
                     RealEstate realEstate = new RealEstate(number, bound, address, landRegisterNumber, description)
 
-
+                    repo.add(realEstate);
                     break;
                 case 2:
                     break;
