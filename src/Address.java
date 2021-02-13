@@ -1,0 +1,17 @@
+
+public class Address {
+
+    private String street;
+    private int houseNumber;
+    private int flatNumber;
+    private String postCode;
+    private String city;
+
+    public Address(String street, int houseNumber, int flatNumber, String postCode, String city) {
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.flatNumber = flatNumber;
+        this.postCode = postCode;
+        this.city = city;
+    }
+}
